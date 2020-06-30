@@ -15,16 +15,17 @@ let main = {
     
     // draw 棋盘
     // drawTool.drawImage(context,'images/loadingLogo.png',canvas.width / 2 - 93,200,186,222);
-    drawTool.drawImage(context,'images/qp.png',canvas.width / 2- 500,700,1000,1000);
+    drawTool.drawImage(context,'images/qp.png',canvas.width / 2- 500,700,1000,1000,0,true);
     // draw 本地头像
     let userInfo = wx.getStorageSync('userInfo')
     console.log(userInfo.avatarUrl);
-    drawTool.drawImage(context,userInfo.avatarUrl,70,240,200,200,100);
-    drawTool.drawImage(context,userInfo.avatarUrl,855,240,200,200,100);
+    drawTool.drawImage(context,userInfo.avatarUrl,70,240,200,200,100,true);
+    drawTool.drawImage(context,userInfo.avatarUrl,855,240,200,200,100,true);
 
     //draw vs
-    drawTool.drawImage(context,'images/vs.png',canvas.width / 2 - 100,150,200,200);
-
+    drawTool.drawImage(context,'images/vs.png',canvas.width / 2 - 100,150,200,200,0,true);
+    //draw ready btn
+    drawTool.drawImage(context,'images/ready.png',canvas.width / 2 - 255,2000,510,165,0,false);
     
     // console.log('data uri:',canvas.toDataURL());
 

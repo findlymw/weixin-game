@@ -2,7 +2,7 @@ let drawTool = {
   cleanAll(ctx,windowWidth, windowHeight) {
     ctx.clearRect(0, 0, windowWidth, windowHeight)
   },
-  drawImage(ctx, url,x,y,width,height,raduis) {
+  drawImage(ctx, url,x,y,width,height,raduis,isSave) {
     var image = wx.createImage()
     image.src = url;
     image.onload = function () {
@@ -18,7 +18,8 @@ let drawTool = {
       }else{
         ctx.drawImage(image, x, y, width, height)
       }
-      ctx.save();
+      if(isSave)
+        ctx.save();
     }
   }
 
